@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title>Ex.5</title>
+</head>
+<body>
+	<input type="text" id="num">
+	<input type="button" onClick='Check()' value="Check">
+		<script type="text/javascript">
+		function Check(){
+			var num = parseInt(document.getElementById("num").value);
+			var numb;
+			switch (num) {
+				case 0: numb = "Zero"; break;
+				case 1: numb = "One"; break;
+				case 2: numb = "Two"; break;
+				case 3: numb = "Three"; break;
+				case 4: numb = "Four"; break;
+				case 5: numb = "Five"; break;
+				case 6: numb = "Six"; break;
+				case 7: numb = "Seven"; break;
+				case 8: numb = "Eight"; break;
+				case 9: numb = "Nine"; break;
+				default: numb = "Invalid Number";break;
+			}
+			alert(numb);
+			if ( isNaN(num) ){
+				alert("Enter Number NOT Symbol or Letter");
+			}
+
+		}
+		</script>
+</body>
+</html>

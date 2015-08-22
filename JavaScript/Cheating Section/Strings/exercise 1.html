@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>Strings.Exercise 1</title>
+</head>
+<body>
+	
+	<center>Insert text which you want to be reversed : <input type="text" name="first" id="first" value=""/></br>
+	<input type="button" onClick="reverse()" value="Reverse"/></br>
+	Reversed text : <input type="text" name="second" id="second" value=""/></center>
+	
+	<script>
+	function reverse(){
+		var str = document.getElementById("first").value;
+		var smartStr = new String(str);
+		var n = "";
+		var strconcat = "";
+				for (var a = smartStr.length-1; a>=0; a--){
+					n = smartStr[a];
+					var strconcat = strconcat + n;
+				}
+		document.getElementById("second").value = strconcat;
+
+	}
+</script>
+</body>
+</html>

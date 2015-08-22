@@ -1,0 +1,47 @@
+<html>
+<head>
+	<title>Ex.4</title>
+</head>
+<body>
+	<input type="text" id="num1"><br>
+	<input type="text" id="num2"><br>
+	<input type="text" id="num3"><br>
+	<input type="button" onClick='Check()' value="Check">
+		<script type="text/javascript">
+		function Check(){
+			var num1 = document.getElementById("num1").value;
+			var num2 = document.getElementById("num2").value;
+			var num3 = document.getElementById("num3").value;
+			if ( isNaN(num1) || isNaN(num2) || isNaN(num3 )){
+				alert("You have not entered number");
+			}
+			else{
+				if (num1>=num2){
+					if (num2>=num3){
+						alert (num1 + ">" + num2 + ">" + num3);
+					}
+					else{
+						alert (num1 + ">" + num3 + ">" + num2);
+				}
+				}
+				else if (num2>=num3){
+					if (num3>=num1){
+						alert (num2 + ">" + num3 + ">" + num1);
+					}
+					else{
+						alert (num2 + ">" + num1 + ">" + num3);
+				}
+				}
+				else{
+					if (num1>=num2){
+						alert (num3 + ">" + num1 + ">" + num2);
+					}
+					else{
+						alert (num3 + ">" + num2 + ">" + num1);
+					}
+				}
+			}
+		}
+		</script>
+</body>
+</html>

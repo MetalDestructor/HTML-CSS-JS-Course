@@ -1,0 +1,29 @@
+<html>
+<head>
+	<title>Ex.2</title>
+</head>
+<body>
+	<input type="text" id="num1"><br>
+	<input type="text" id="num2"><br>
+	<input type="text" id="num3"><br>
+	<input type="button" onClick='Check()' value="Check">
+	<script type="text/javascript">
+		function Check(){
+			var num1 = document.getElementById("num1").value;
+			var num2 = document.getElementById("num2").value;
+			var num3 = document.getElementById("num3").value;
+			if (num1==0 || num2==0 || num3==0) {
+				alert("There is no sign.");
+			} 
+			else if ((num1<0 && num2<0 && num3<0) || (num1<0 && num2>0 && num3>0) || (num1>0 && num2<0 && num3>0) || (num1>0 && num2>0 && num3<0)) {
+				alert("The sign is '-'.");
+			}
+			else if ((num1>0 && num2>0 && num3>0) || (num1>0 && num2<0 && num3<0) || (num1<0 && num2>0 && num3<0) || (num1<0 && num2<0 && num3>0)) {
+				alert("The sign is '+'.");
+			}
+			else
+				alert("The value you have entered is not a number :/.");
+			};
+	</script>
+</body>
+</html>

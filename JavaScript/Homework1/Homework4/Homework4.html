@@ -1,0 +1,19 @@
+<html>
+<head>
+	<title>Ex.4</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function Check(){
+		var num	= document.getElementById("Check").value;
+		var num2 = num.toString();
+		if (num2[num2.length-3] == 7)
+			alert("The third digit is 7");
+		else
+			alert("The third digit is not 7");
+			}
+	</script>
+	<input type="text" id="Check">
+	<input type="button" onClick="Check()" value="Check">
+</body>
+</html>

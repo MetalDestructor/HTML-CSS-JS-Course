@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>Homework 5</title>
+    <link rel="stylesheet" type="text/css" href="styles/js-console.css">
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script type="text/javascript">
+       var persons = [
+            {firstName: "Gosho", lastName: "Petrov", age: 32},
+            {firstName: "Bay", lastName: "Ivan", age: 81},
+            {firstName: "Hosho", lastName: "Hoshov", age: 23}
+        ];
+
+        mlad(persons);
+
+        function mlad(array) {
+            var index = 0;
+            var age = array[0].age;
+            for (var i = 1; i < array.length; i++) {
+                if (array[i].age<age) {
+                    age = array[i].age;
+                    index = i;
+                }
+            }
+
+            jsConsole.writeLine("The youngest person is " + array[index].firstName + " " + array[index].lastName + " " + array[index].age + " godini");
+        }
+    </script>
+</body>
+</html>

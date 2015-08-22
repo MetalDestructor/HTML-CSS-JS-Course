@@ -1,0 +1,22 @@
+<html>
+<head>
+</head>
+<body>
+	<form>
+		<input type="button" value="Print array" onclick="Print()"/>
+	</form>
+	<script type="text/javascript">
+	function Print()
+	{
+	var arr = new Array(20); 
+	var i;
+	
+		for (i = 0; i < arr.length; i++)
+        {
+            arr[i] = i * 5;
+        }
+	alert(arr.join(','));
+	}               
+	</script>
+</body>
+</html>

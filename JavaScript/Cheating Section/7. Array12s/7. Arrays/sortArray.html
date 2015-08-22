@@ -1,0 +1,46 @@
+<html>
+<head>
+</head>
+<body>
+	<form>
+		<textarea id="number" placeholder="Insert numbers separated by ',':"></textarea>
+		<input type="button" value="Sort Array" onclick="Sort()"/>
+	</form>
+	<script type="text/javascript">
+	function Sort()
+	{
+		var FirstArray = document.getElementById("number").value.split(",");
+		
+		var Maxcount =0;
+		var count = 0;
+		var positionElement = 0;
+		var i;
+		var j;
+		var minElement;
+
+		
+			for (i = 0; i < FirstArray.length; i++)
+			{
+				minElement = FirstArray[i];
+				for (j = i; j < FirstArray.length; j++)
+				{
+				
+					if(FirstArray[j] < minElement)
+						{
+							minElement = FirstArray[j];
+							FirstArray[j] = FirstArray[i];
+							FirstArray[i] = minElement;
+						}	
+				}
+			}
+			alert("{  " + FirstArray.join(', ') + "}");
+			
+			
+			console.log("{");
+            console.log(FirstArray.join(', '));
+            console.log("}");
+                        
+	}               
+	</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>Strings.Exercise 2</title>
+</head>
+<body>
+	
+	<center>Write an expression to check : <input type="text" name="first" id="first" value=""/></br>
+	<input type="button" onClick="Check()" value="Check"/></br>
+	Is the expression correct : <input type="text" name="second" id="second" value=""/></center>
+	
+	<script>
+	function Check(){
+		var str = document.getElementById("first").value;
+		var smartStr = new String(str);
+		var n = "";
+		var count1 = 0;
+		var count2 = 0;
+			for (var a = 0; a<=smartStr.length-1; a++){
+				n = smartStr[a];
+				if (n == "("){
+					count1++;
+				}
+				if(n == ")"){
+					if(count1>count2){
+						count2++;
+					}
+					else 
+						count2--;
+				}
+					
+			}
+		if(count1 == count2){
+			var boo = true;
+		}
+		if(count1 !== count2) {
+			var boo = false
+		}
+		if(smartStr == ""){
+			var boo = false
+		}
+		document.getElementById("second").value = boo;
+
+	}
+</script>
+</body>
+</html>

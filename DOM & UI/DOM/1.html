@@ -1,0 +1,61 @@
+<html>
+<head>
+    <title>
+        Ex.1
+    </title>
+</head>
+<body>
+    <div id="the-div">
+        <div>
+            <div>
+                Ha1
+            </div>
+        </div>
+    </div>
+
+    <div id="the-div">
+        <header>
+            <div>
+                No1
+            </div>
+        </header>
+    </div>
+
+    <div id="the-div">
+        <div>
+            <div>
+                Ha2
+            </div>
+        </div>
+    </div>
+
+    <div id="the-div">
+        <header>
+            <div>
+                No2
+            </div>
+        </header>
+    </div>
+    <script>
+       
+        var querydivs = document.querySelectorAll("div div")
+        var querydivs1 = document.querySelectorAll("div header");
+        console.log("Query Selector:Nested div elements are:" + (querydivs.length - querydivs1.length));
+
+        var divs = document.getElementsByTagName("div");
+        var headers = document.getElementsByTagName("header");
+        function divequals() {
+            var count = 0;
+            for (i = 0; i <= headers.length; i+=2){
+                count = i;
+            }
+        return -((divs.length - count) -2);
+        }
+
+
+            var divs = document.getElementsByTagName("div div");
+        console.log("Selection:Nested div elements are:" + divequals());
+
+    </script>
+</body>
+</html>

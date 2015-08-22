@@ -1,0 +1,55 @@
+<html>
+<head>
+</head>
+<body>
+	<form>
+		<textarea id="number" placeholder="Insert numbers separated by ',':"></textarea>
+		<input type="button" value="Find Maximal Equal Sequence" onclick="MaxEqualSequence()"/>
+	</form>
+	<script type="text/javascript">
+	function MaxEqualSequence()
+	{
+		var FirstArray = document.getElementById("number").value.split(",");
+		
+		var Maxcount =0;
+		var count = 0;
+		var positionElement = 0;
+		var i;
+		
+			for (i = 0; i < (FirstArray.length - 1); i++)
+			{
+				if(FirstArray[i] < FirstArray[i+1])
+					{
+						count++;
+						
+						if (count > Maxcount)
+						{
+						positionElement = i + 1;
+						Maxcount = count;
+						}
+					}
+				else
+				{
+				count =0;
+				}
+			}
+			alert("{  " + FirstArray[positionElement-Maxcount] + ", " );
+			
+			for (i=positionElement - Maxcount + 1; i < positionElement + 1; i++) 
+			{
+			alert(FirstArray[i]);
+			}
+			alert("}")
+			
+			console.log("{");
+            console.log(FirstArray[positionElement-Maxcount]);
+                for (i = positionElement - Maxcount + 1; i < positionElement+1; i++)
+                {
+                console.log("," + FirstArray[i]);
+                }
+            console.log("}");
+                        
+	}               
+	</script>
+</body>
+</html>

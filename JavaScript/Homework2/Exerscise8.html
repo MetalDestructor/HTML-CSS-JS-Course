@@ -1,0 +1,49 @@
+<html>
+<head>
+	<title>Ex.8</title>
+</head>
+<body>
+	<input type="text" id="num1">
+	<input type="button" onClick='Check()' value="Check">
+    <script>
+        function Check(){ 
+            var Ones = [ "Zero","One","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Eleven","Twelve","Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"];
+            var ones = [ "","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen" ];
+            var Tens = [ "", "", "Twenty", "Thirty", "Fourty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety" ];
+            var tens = [ "", "", "twenty", "thirty", "fourty", "fifty", "sixty", "seventy", "eighty", "ninety" ];
+            
+                var n = parseInt(document.getElementById("num1").value);
+                if (n >= 0 && n <= 19) 
+                    {
+                        alert(Ones[n]);
+                    }
+                if (n >= 20 && n <= 99)
+                {
+                    if (n % 10 != 0)
+                    {
+                        alert(Tens[Math.floor(n / 10)] + "-" + ones[n % 10]);
+                    }
+                }
+                if (n >= 100)
+                {
+
+                    if (Math.floor(n / 100) >= 0 && Math.floor(n / 100) <= 19)
+                    {
+                        if ((n % (Math.floor(n / 100) * 100) <= 19) && (n % (Math.floor(n / 100) * 100) >= 1))
+                        {
+                            alert(Ones[Math.floor(n / 100)] + " hundred and " + ones[n - Math.floor(n / 100) * 100]);
+                        }
+                        if ((n % (Math.floor(n / 100) * 100) == 0) || (n % (Math.floor(n / 100) * 100) >= 20) && (n % (Math.floor(n / 100) * 100) <= 99))
+                        {
+                            alert(Ones[Math.floor(n / 100)] + " hundred " + tens[Math.floor(n / 10) % 10] + " " + ones[n % 10]);
+                        }
+                    }
+                }
+                if (n>=1000 || isNaN(n))
+                {
+                    alert("Enter number in interval 1-999");
+                }   
+            }
+        </script>
+</body>
+</html>

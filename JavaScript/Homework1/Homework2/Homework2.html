@@ -1,0 +1,23 @@
+
+<html>
+<head>
+	<title>Ex.2</title>
+</head>
+<body>
+ <script>
+	function Check(){
+	var num;
+	num=document.getElementById("numb").value;
+	var bool=true;
+	if (num % 5 == 0 && num % 7 == 0){
+		bool=true;
+		alert(bool);}
+	else{
+		bool=false;
+		alert(bool);}
+	}
+	</script>
+	<input type="text" id="numb">
+	<input type="button" onClick='Check()' value="Check">
+</body>
+</html>

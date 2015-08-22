@@ -1,0 +1,20 @@
+/* CSS Document */
+body                 { background-color:#666666 }
+
+#ticketid 	{ text-align:left;
+			  font-size:20;
+			  color:#CCCCCC;
+			  text-decoration:none}
+
+div			{ font-weight: bold;
+			  color:#C60A0A }
+			  
+#basic		{ font-style: italic;
+			  color:white}
+
+#status		{ font-style: bold;
+			  color:orange}
+	
+p			{ color:#FFE270 }
+
+#julto 		{ color:#FFE270 }

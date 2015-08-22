@@ -1,0 +1,29 @@
+<html>
+<head>
+	<title>Strings.Exercise 9</title>
+	<link href="js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="js-console"></div>
+	<script src="js-console.js"></script>
+	
+	<script>
+	function ArrMails(){
+		var text = "Some emails daniel-tenekedjiev@abv.bg, Anadoli.Petrov@hotmail.com";
+		var ArrMails = [];
+		var i = text.indexOf("@");
+		while(i>-1){
+			var id = text.substring(text.lastIndexOf(" ", i - 1), i);
+			var host = text.substring(i + 1, text.IndexOf(".", i + 1));
+			var domain = text.substring(text.IndexOf(".", i + 1) + 1, text.IndexOf("."));
+			var mail = id + "@" + host + "." + domain + "; ";
+			Arrmails.push(mail);
+			i = text.IndexOf("@", i + 1);
+		}
+		for (var email in emailArr){
+            jsConsole.writeLine(emailArr[email]);
+        }
+	}
+</script>
+</body>
+</html>

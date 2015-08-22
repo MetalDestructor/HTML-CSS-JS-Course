@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>Strings.Exercise 3</title>
+</head>
+<body>
+	
+	<center>Insert text  : <input type="text" name="first" id="first" value=""/></br>
+	Insert the value you want to know who many times it is written in the text : <input type="text" name="second" id="second" value=""/>
+	<input type="button" onClick="find_value_on_text()" value="GO->"/></br></center>
+	<br>The value is written <input type="text" name="third" id="third" value=""/> times!</br>
+	
+	<script>
+	function find_value_on_text(){
+		var str = document.getElementById("first").value;
+		var value = document.getElementById("second").value;
+		for(var count=-1,i=0; i != -1; count++,i=str.indexOf(value,i+1) );
+			
+		document.getElementById("third").value = count;
+
+	}
+</script>
+</body>
+</html>

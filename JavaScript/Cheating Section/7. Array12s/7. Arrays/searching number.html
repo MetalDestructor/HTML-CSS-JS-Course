@@ -1,0 +1,59 @@
+<html>
+<head>
+</head>
+<body>
+	<form>
+		<textarea id="first" placeholder="Insert numbers separated by ',':"></textarea>
+		<input type="text" id="second" placeholder="Insert number for search: "/>
+		<input type="button" value="Find Maximal Equal Sequence" onclick="MaxEqualSequence()"/>
+	</form>
+	<script type="text/javascript">
+	function MaxEqualSequence()
+	{
+		var FirstArray = document.getElementById("first").value.split(",");
+		var searchedNumber = document.getElementById("second").value.split(",");
+		
+		FirstArray.sort(orderBy);
+        alert('Sorted array is {' + FirstArray.join(',') + '}');
+		
+		var result = BinarySearch(FirstArray, searchedNumber);
+		if (result === -1)
+		{
+		alert( searchedNumber + "is not existing in given array");
+		}
+		else
+		{
+		alert("Index of searched element is " + result);
+		}
+		
+		function orderBy(a,b){
+		return (a==b)? 0 : (a>b)? 1: -1
+		}
+		
+		function BinarySearch(FirstArray, searchedNumber){
+		var MaxElement = FirstArray.length - 1;
+			var MinElement = 0;
+			while (MaxElement >= MinElement)
+			{
+			var Midpoint = parseInt((MinElement + MaxElement) / 2);
+                                if (FirstArray[Midpoint] < searchedNumber)
+                                {
+                                        MinElement = Midpoint + 1;
+                                }
+                                else if (FirstArray[Midpoint] > searchedNumber)
+                                {
+                                        MaxElement = Midpoint - 1;
+                                }
+                                else
+                                {
+                                        return Midpoint;
+                                }
+                        }
+                        return -1;
+        }
+		
+                        
+	}               
+	</script>
+</body>
+</html>

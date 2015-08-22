@@ -1,0 +1,79 @@
+<html>
+<head>
+    <title>Homework 4</title>
+    <link rel="stylesheet" type="text/css" href="styles/js-console.css">
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script type="text/javascript">
+
+        function Person(name, lastName, age) {
+            this.name = name;
+            this.lastName = lastName;
+            this.age = age;
+
+            this.toString = function () {
+                return this.name + " " + this.lastName + " age: " + this.age;
+            }
+        }
+
+        var people = new Array();
+
+        people.push(new Person("Ivan", "Vankov", 27));
+        people.push(new Person("Doncho", "Maskovski", 81));
+        people.push(new Person("George", "Matov", 76));
+        people.push(new Person("Niki", "Vaptsarov", 54));
+
+
+
+        function group(people, property) {
+
+            if (!people[0].hasOwnProperty(property)) {
+                throw new Error("no such property!");
+            }
+
+            groups = {};
+
+            people.map(function (current) {
+                if (!groups[current[property]]) {
+                    groups[current[property]] = new Array();
+                }
+                groups[current[property]].push(current);
+            });
+
+            return groups;
+        }
+
+        jsConsole.writeLine("Names:");
+
+        var groupedByFirstName = group(people, "name");
+        var groupedByLastName = group(people, "lastName");
+        var groupedByAge = group(people, "age");
+
+        printPeople(people);
+
+        function printPeople(people) {
+            for (var i = 0; i < people.length; i++) {
+                jsConsole.writeLine(people[i]);
+            }
+        }
+
+        function printGrouped(people) {
+            for (var person in people) {
+                jsConsole.writeLine(people[person]);
+            }
+        }
+
+        jsConsole.writeLine();
+        jsConsole.writeLine("Grouped by first name:");
+        printGrouped(groupedByFirstName);
+        jsConsole.writeLine();
+        jsConsole.writeLine("Grouped by last name:");
+        printGrouped(groupedByLastName);
+        jsConsole.writeLine();
+        jsConsole.writeLine("Grouped by age");
+        printGrouped(groupedByAge);
+    </script>
+</body>
+</html>

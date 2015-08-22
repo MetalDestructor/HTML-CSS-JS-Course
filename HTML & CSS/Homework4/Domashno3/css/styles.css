@@ -1,0 +1,29 @@
+/* CSS Document */
+body			{ background-color:#A2B6C1 }
+			  
+.big		{ text-decoration:none;
+			  text-align:center}
+
+.navs  		{ text-decoration:none;
+			  color:#FFFFFF;
+			  font-size:22px;
+			  font-style:bold}  
+
+#don		{ text-decoration:none;
+			  color:#000000}
+			  
+#telerik	{text-align:center}
+
+.head		{ color:#FFFFFF;
+			  font-size:25px}
+
+.head1		{ color:#FFFFFF;
+			  font-size:45px}
+			  
+#min		{ font-size:0.8em}
+
+#line		{ text-decoration:underline}
+
+#color		{ background-color:#CED7DC}
+
+ul			{list-style:none}

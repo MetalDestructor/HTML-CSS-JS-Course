@@ -1,0 +1,81 @@
+<html>
+<head>
+</head>
+<body>
+	<form>
+	 <input type="text" id="first" placeholder="first string"/>
+	 <input type="text" id="second" placeholder="first string"//>
+	 <input type="button" value="Compare" onclick="Compare()"/>
+	</form>
+	<script type="text/javascript">
+	function Compare() 
+	{
+		var first = document.getElementById("first").value;
+		var second = document.getElementById("second").value;
+		var FirstRow = first.split('');
+		var SecondRow = second.split('');
+		var Bletter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
+		var sletter = "abcdefghijklmnopqrstuvwxyz".split('');
+		var IsEqual = true;
+		var i;
+			for (i = 0; i < Math.max(FirstRow.length, SecondRow.length); i++)
+			{
+				if (FirstRow[i] != SecondRow[i]) 
+				{
+				var resultF = Bletter.indexOf(FirstRow[i]);
+				var resultS = Bletter.indexOf(SecondRow[i]);
+				
+				if (resultF == -1)
+				{
+				resultF = sletter.indexOf(FirstRow[i]);
+				}
+				
+				if (resultS == -1)
+				{
+				resultS = sletter.indexOf(SecondRow[i]);
+				}
+				
+				if (resultF < resultS)
+				{
+				alert("First string is lexicographically smaller");
+				IsEqual = false;
+				break;
+				}
+				
+				else
+				{
+				alert("Second string is lexicographically smaller")
+				IsEqual = false;
+				break;
+				}
+				
+				}
+			
+				else if (i == FirstRow.length - 1 && i != SecondRow.Length - 1)
+				{
+				alert("First string is lexicographically smaller")
+				IsEqual = false;
+				break;
+				}
+				
+				else if (i != FirstRow.length - 1 && i == SecondRow.Length - 1)
+				{
+				alert("Second string is lexicographically smaller")
+				IsEqual = false;
+				break;
+				}
+				
+				else 
+					IsEqual = true;
+			}
+			
+			if (IsEqual == true)
+				{
+				alert("Two strings are lexicographically equal");
+				}
+			
+	}
+			
+	</script>
+</body>
+</html>

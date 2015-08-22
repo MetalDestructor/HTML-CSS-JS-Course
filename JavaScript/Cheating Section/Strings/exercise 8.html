@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>Strings.Exercise 8</title>
+</head>
+<body>
+	
+	<center>Insert text with a href tag : <input type="text" name="first" style="width: 1000px;" id="first" value=""/></br>
+	<input type="button" onClick="ChangeAHref()" value="Change '<a href' tags"/></br>
+	Changed Text : <input type="text" name="second" style="width: 1000px;" id="second" value=""/></center>
+	
+	<script>
+	function ChangeAHref(){
+		var text = document.getElementById("first").value;
+		var i = text.indexOf("<a href");
+		while(i>-1){
+			text = text.replace("<a href","[URL");
+			text = text.replace("</a>","[URL]");
+			i = text.indexOf("<a", i + 1);
+		}
+		document.getElementById("second").value = text;
+
+	}
+</script>
+</body>
+</html>

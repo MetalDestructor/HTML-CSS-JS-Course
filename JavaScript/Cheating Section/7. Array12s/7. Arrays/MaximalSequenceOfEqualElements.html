@@ -1,0 +1,47 @@
+<html>
+<head>
+</head>
+<body>
+	<form>
+		<textarea id="number" placeholder="Insert numbers separated by ',':"></textarea>
+		<input type="button" value="Find Maximal Sequence" onclick="Find()"/>
+	</form>
+	<script type="text/javascript">
+	function Find()
+	{
+		var FirstArray = document.getElementById("number").value.split(",");
+		
+		var Element = FirstArray[0];
+		var MaxElement = Element;
+		var Maxcount =0;
+		var count = 0;
+		var i;
+		
+			for (i = 1; i < FirstArray.length; i++)
+			{
+				if(FirstArray[i] == Element)
+					{
+						count++;
+						if (count>Maxcount)
+						{
+						Maxcount = count;
+						MaxElement = Element;
+						}
+					}
+				else
+				{
+				Element = FirstArray [i];
+				count =0;
+				}
+			}
+			alert("{  " + MaxElement + ", " );
+			
+			for (i=0; i < Maxcount; i++) 
+			{
+			alert(MaxElement);
+			}
+			alert("}")
+	}               
+	</script>
+</body>
+</html>

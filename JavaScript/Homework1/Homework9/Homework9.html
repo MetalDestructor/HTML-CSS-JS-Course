@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ex.9</title>
+</head>
+<body>
+	<script type="text/javascript">
+	function check() {
+                var x = document.getElementById("numb1").value;
+                var y = document.getElementById("numb2").value;
+                else if ((((x - 1)*(x - 1) + (y - 1)*(y - 1)) <= 9) && ((x < -1) || ((x >= -1) && ((y <= -1) || (y >= 1)))))
+                    alert("The point is inside or on the circle and out of the rectangle!");
+            else
+                    alert("The point is NOT inside or on the circle and out of the rectangle!");
+            }
+	</script>
+	<input type="text" id="numb1">
+	<input type="text" id="numb2">
+	<input type="button" onClick='check()' value="Check">	
+	
+	
+	
+</body>
+</html>

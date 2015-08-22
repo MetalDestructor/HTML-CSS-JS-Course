@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>Strings.Exercise 4</title>
+</head>
+<body>
+	
+	<div id="js-console"></div>
+	
+	<script src="scripts/js-console.js"></script>
+	
+	<script>
+	
+	jsConsole.writeLine("We are <mixcase>living</mixcase> in a <upcase>yellow submarine</upcase>. We <mixcase>don't</mixcase> have <lowcase>TRALALA</lowcase> else.");
+	var text = "We are <mixcase>living</mixcase> in a <upcase>yellow submarine</upcase>. We <mixcase>don't</mixcase> have <lowcase>anything</lowcase> else.";
+	var objText = new String(text);
+	objText = doMixCase(objText);
+	objText = doUpcase(objText);
+	objText = doLowCase(objText);
+	jsConsole.writeLine(objText);
+	
+    function doUpcase(text){
+		var iStart = text.indexOf("<upcase>");
+		while (iStart>-1){
+			var inside = text.substring(iStart + 8, text.indexOf("</upcase>", iStart))
+			var uppText = inside.doUpperCase();
+			text = text.replace(inside, uppText);
+			iStart = text.indexOf("<upcase>", iStart+1);
+		}
+	return text;
+	}
+	function doMixCase(text){
+		var iStart = text.indexOf("<mixcase>");
+		while (iStart > -1){
+			var inside = text.substring(iStart + 9, text.indexOf("</mixcase>", iStart));
+			var mixText = new String(inside);
+			for (var i = 0; i < mixText.length ; i++) {
+				if(i%2==0){
+					mixText = mixText.replace(mixText[i],mixText[i].toUpperCase())
+				}
+				else{
+					mixText = mixText.replace(mixText[i], mixText[i].toLowerCase())
+				}
+			}
+			text = text.replace(inside, mixText);
+			iStart = text.indexOf("<mixcase>", iStart + 1);
+		}
+	return text;
+	}
+	function doLowCase(text){
+		var iStart = text.indexOf("<lowcase>");
+		while (indexStart > -1){
+			var inside = text.substring(iStart + 9, text.indexOf("</lowcase>", iStart));
+			var lowText = inside.toLowerCase();
+			text = text.replace(inside, lowText);
+			iStart = text.indexOf("<lowcase>", iStart + 1);
+		}
+		return text;
+	}
+</script>
+</body>
+</html>

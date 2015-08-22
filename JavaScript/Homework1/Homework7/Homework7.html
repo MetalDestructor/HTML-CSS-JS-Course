@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ex.7</title>
+</head>
+<body>
+	<script type="text/javascript">
+	function check(){
+                    var num = parseInt(document.getElementById("numb").value);
+                    var prime = true;
+                    for (var i = 2; i <= Math.sqrt(num); i++)
+                    {
+                        if (num % i == 0)
+                        {
+                            prime = false;
+                            break;
+                        }
+                    }
+            
+                    if(prime)
+                    {
+                        alert("The number is prime!");
+                    }
+                    else
+                    {
+                        alert("The number is composite!");
+                    }
+                }
+	</script>
+	<input type="text" id="numb">
+	<input type="button" onClick='check()' value="Check">	
+	
+	
+	
+</body>
+</html>

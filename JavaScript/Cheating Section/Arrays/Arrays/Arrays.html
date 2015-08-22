@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+     <script>
+
+function checkButton() {
+    var myArray = new Array(3,4,5,6,7,34,54,78,88);
+    var min = 0;
+    var max = myArray.length-1;
+    var key = 4;
+    var mid;
+    
+    while (min <= max ) {
+        mid = parseInt((min + max ) / 2);
+        if (myArray[mid] == key) {
+            return mid;
+        } else if (myArray[mid] < key) {
+            min = mid + 1;
+        } else {
+            max = mid - 1;
+        }
+    }
+	
+}
+function checkButton1() {
+    var myArray = new Array(3,4,5,6,7,34,54,78,88);
+    var min = 0;
+    var max = myArray.length-1;
+    var key = 78;
+    var mid;
+    
+    while (min <= max ) {
+        mid = parseInt((min + max ) / 2);
+        if (myArray[mid] == key) {
+            return mid;
+        } else if (myArray[mid] < key) {
+            min = mid + 1;
+        } else {
+            max = mid - 1;
+        }
+    }
+	
+}
+
+
+</script>
+</head>
+<body>
+    
+        <h1>Let's find the index of element in a sorted array using the binary search algorithm.
+            Our given array is:<br />
+             [3,4,5,6,7,34,54,78,88] and the key is: 4
+        </h1>
+		<h2>
+		4 has index :
+        <script>
+		document.write(checkButton());
+		</script>
+    </h2>
+	<h1>Let's find the index of element in a sorted array using the binary search algorithm.
+            Our given array is:<br />
+             [3,4,5,6,7,34,54,78,88] and the key is: 78
+        </h1>
+		<h2>
+		78 has index :
+		<script>
+		document.write(checkButton1());
+		</script>
+		</h2>
+</body>
+</html>

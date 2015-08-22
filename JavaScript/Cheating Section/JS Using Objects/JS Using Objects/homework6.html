@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title>Homework 5</title>
+    <link rel="stylesheet" type="text/css" href="styles/js-console.css">
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script type="text/javascript">
+     var persons = [
+            {firstname: "Gosho", lastname: "Petrov", age: 32},
+            {firstname: "Bay", lastname: "Ivan", age: 81},
+            {firstname: "Hosho", lastname: "Hoshov", age: 23}
+        ]
+
+        var groupedByFname = group(persons, "firstname");
+        var groupedByLname = group(persons, "lastname");
+        var groupedByAge = group(persons, "age");
+       
+        function group(persons,criteria) {
+           
+                var groupa = {};
+                for (var person in persons) {
+                    
+                    if (!groupa[persons[person][criteria]]) {
+                        groupa[persons[person][criteria]] = [];
+                    }
+                   
+                    var current = persons[person].firstname + " " + persons[person].lastname + " " + persons[person].age + " years old."
+                    groupa[persons[person][criteria]].push(current);
+                }
+                
+                jsConsole.writeLine('Grouped by '+criteria);
+                for (var name in groupa) {
+                    jsConsole.writeLine('Group "' + name + '":');
+
+                    for (var member in groupa[name]) {
+                        jsConsole.writeLine(groupa[name][member]);
+                    }
+                    jsConsole.writeLine();
+                }    
+            
+        }
+    </script>
+</body>
+</html>

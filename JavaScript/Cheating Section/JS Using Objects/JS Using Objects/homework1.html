@@ -1,0 +1,73 @@
+<html>
+<head>
+    <title>Homework 1</title>
+</head>
+<link rel="stylesheet" type="text/css" href="styles/js-console.css">
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script type="text/javascript">
+
+        function Point(x, y) {
+            this.x = x;
+            this.y = y;
+
+            this.getDistance = function (point) {
+                return Math.sqrt(Math.pow((this.x + point.x), 2) + Math.pow((this.y + point.y), 2));
+            }
+
+            this.toString = function () {
+                return "point (" + this.x + "," + this.y + ")";
+            }
+
+            this.clone = function () {
+                return new Point(this.x, this.y);
+            }
+        }
+
+        function Line(pointA, pointB) {
+            this.start = pointA.clone();
+            this.end = pointB.clone();
+            this.length = function () {
+                return this.start.getDistance(this.end);
+            }
+
+            this.toString = function () {
+                return "Start " + this.start + ", End " + this.end;
+            }
+        }
+
+        function checkIfCanMakeTriangle(pointA, pointB, pointC) {
+            var lengthA = pointA.length();
+            var lengthB = pointB.length();
+            var lengthC = pointC.length();
+
+            return lengthA + lengthA > lengthC &&
+                   lengthB + lengthC > lengthA &&
+                   lengthA + lengthC > lengthB;
+        }
+
+        var pointA = new Point(1, 5);
+        var pointB = new Point(2, 6);
+        var pointC = new Point(7, 1);
+
+        var lineAtoB = new Line(pointA, pointB);
+        var lineBtoC = new Line(pointB, pointC);
+        var lineAtoC = new Line(pointA, pointC);
+
+        jsConsole.writeLine(pointA);
+        jsConsole.writeLine(pointB);
+        jsConsole.writeLine(pointC);
+
+        jsConsole.writeLine();
+
+        jsConsole.writeLine(lineAtoB);
+        jsConsole.writeLine(lineBtoC);
+        jsConsole.writeLine(lineAtoC);
+
+        jsConsole.writeLine();
+
+        jsConsole.writeLine("Can this lines make a triangle? " + checkIfCanMakeTriangle(lineAtoB,lineBtoC,lineAtoC));
+    </script>
+</body>
+</html>

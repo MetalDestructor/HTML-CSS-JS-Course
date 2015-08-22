@@ -1,0 +1,26 @@
+<html>
+<head>
+	<title>Ex.1</title>
+</head>
+<body>
+	<input type="text" id="num1">
+	<input type="text" id="num2">
+	<input type="button" onClick='Check()' value="Check">
+	<script type="text/javascript">
+		function Check(){
+			var num1 = document.getElementById("num1").value;
+			var num2 = document.getElementById("num2").value;
+			var numswap;
+			if (num1>num2) {
+				numswap=num1;
+				num1=num2;
+				num2=numswap;
+				alert("Number1 is: " + num1 + "\n" + "Number2 is: " + num2);
+			} 
+			else{
+				alert("Number1 is: " + num1 + "\n" + "Number2 is: " + num2);
+			};		
+		}
+	</script>
+</body>
+</html>
